@@ -122,10 +122,12 @@ export default {
       const randomBgmIndex = Math.floor(Math.random() * this.bgmList.length)
       this.currentBgm = this.bgmList[randomBgmIndex]
       this.$refs.bgmAudio.src = this.currentBgm
+      this.$refs.bgmAudio.volume = 0.8 // 设置较小音量
     },
     
     setupAudio() {
       this.$refs.quoteAudio.src = this.currentQuote.audio
+      this.$refs.quoteAudio.volume = 1.0 // 设置最大音量
     },
     
     togglePlay() {
@@ -157,6 +159,9 @@ export default {
       this.$refs.quoteAudio.pause()
       this.currentQuoteIndex = this.currentQuoteIndex > 0 ? this.currentQuoteIndex - 1 : this.quotes.length - 1
       this.setupAudio()
+      // 随机更换背景图
+      const randomBgIndex = Math.floor(Math.random() * this.backgrounds.length)
+      this.currentBackground = this.backgrounds[randomBgIndex]
       // 自动播放新语录
       this.$nextTick(() => {
         this.$refs.quoteAudio.play()
@@ -171,6 +176,9 @@ export default {
       this.$refs.quoteAudio.pause()
       this.currentQuoteIndex = this.currentQuoteIndex < this.quotes.length - 1 ? this.currentQuoteIndex + 1 : 0
       this.setupAudio()
+      // 随机更换背景图
+      const randomBgIndex = Math.floor(Math.random() * this.backgrounds.length)
+      this.currentBackground = this.backgrounds[randomBgIndex]
       // 自动播放新语录
       this.$nextTick(() => {
         this.$refs.quoteAudio.play()
