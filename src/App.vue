@@ -54,44 +54,45 @@
 export default {
   name: 'App',
   data() {
+    const basePath = import.meta.env.BASE_URL;
     return {
       quotes: [
         { 
           text: "家长越是想赢过孩子，越是会输掉孩子。",
           source: "爱的思辨",
-          audio: "/audio/1.mp3"
+          audio: basePath + "audio/1.mp3"
         },
         { 
           text: "受委屈的孩子充满敌意，被感动的孩子充满智慧。",
           source: "爱的思辨",
-          audio: "/audio/2.mp3"
+          audio: basePath + "audio/2.mp3"
         },
         { 
           text: "对孩子来说，规则虽然是一种约束，但更是一种保护。清晰的规则会让孩子体会到踏实和自在。",
           source: "爱的思辨",
-          audio: "/audio/3.mp3"
+          audio: basePath + "audio/3.mp3"
         },
         { 
           text: "关于陪伴孩子，家长用10%的心，陪伴10小时，不如用100%的心，陪伴1小时。这就是为什么有的家长既能带好孩子，又能经营好自己。",
           source: "爱的思辨",
-          audio: "/audio/4.mp3"
+          audio: basePath + "audio/4.mp3"
         },
         { 
           text: "父母不好好过日子，是对孩子最不好的影响。",
           source: "爱的思辨",
-          audio: "/audio/5.mp3"
+          audio: basePath + "audio/5.mp3"
         }
       ],
       backgrounds: [
-        "/image/1.jpg",
-        "/image/2.jpg", 
-        "/image/3.jpg",
-        "/image/4.jpg",
-        "/image/5.jpg"
+        basePath + "image/1.jpg",
+        basePath + "image/2.jpg", 
+        basePath + "image/3.jpg",
+        basePath + "image/4.jpg",
+        basePath + "image/5.jpg"
       ],
       bgmList: [
-        "/bgm/你的微笑 - 轻音乐网.mp3",
-        "/bgm/清晨 - 轻音乐网.mp3"
+        basePath + "bgm/你的微笑 - 轻音乐网.mp3",
+        basePath + "bgm/清晨 - 轻音乐网.mp3"
       ],
       currentQuoteIndex: 0,
       currentBackground: "",
