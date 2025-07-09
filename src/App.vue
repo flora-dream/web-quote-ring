@@ -157,6 +157,13 @@ export default {
       this.$refs.quoteAudio.pause()
       this.currentQuoteIndex = this.currentQuoteIndex > 0 ? this.currentQuoteIndex - 1 : this.quotes.length - 1
       this.setupAudio()
+      // 自动播放新语录
+      this.$nextTick(() => {
+        this.$refs.quoteAudio.play()
+        this.$refs.bgmAudio.play()
+        this.isPlaying = true
+        this.isBgmPlaying = true
+      })
     },
     
     nextQuote() {
@@ -164,6 +171,13 @@ export default {
       this.$refs.quoteAudio.pause()
       this.currentQuoteIndex = this.currentQuoteIndex < this.quotes.length - 1 ? this.currentQuoteIndex + 1 : 0
       this.setupAudio()
+      // 自动播放新语录
+      this.$nextTick(() => {
+        this.$refs.quoteAudio.play()
+        this.$refs.bgmAudio.play()
+        this.isPlaying = true
+        this.isBgmPlaying = true
+      })
     },
     
     onAudioEnded() {
