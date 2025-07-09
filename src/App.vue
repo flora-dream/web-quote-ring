@@ -131,10 +131,14 @@ export default {
     togglePlay() {
       if (this.isPlaying) {
         this.$refs.quoteAudio.pause()
+        this.$refs.bgmAudio.pause()
         this.isPlaying = false
+        this.isBgmPlaying = false
       } else {
         this.$refs.quoteAudio.play()
+        this.$refs.bgmAudio.play()
         this.isPlaying = true
+        this.isBgmPlaying = true
       }
     },
     
